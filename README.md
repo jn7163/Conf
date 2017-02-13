@@ -16,13 +16,20 @@ FileName|UpdateTime|QrCode
     [Rule]
     DOMAIN,ad.mobile.youku.com,REJECT
     DOMAIN,ad.api.3g.youku.com,REJECT
-    以上需要更换成有效的代理地址，代理类型还可以为'SOCKS5'或'HTTPS'
-    多个代理之间使用分号分隔，如'PROXY a.com:80;SOCKS5 a.com:1080;'
-	
+    [URL Rewrite]
+    ^http://api.mobile.youku.com/adv/* _reject
+    ^http://home.mobile.youku.com/laout/* _reject
 爱奇艺
 
     [Rule]
-    var wall_proxy = 'PROXY www.abc.com:443;'; 
-    以上需要更换成有效的代理地址，代理类型还可以为'SOCKS5'或'HTTPS'
-    多个代理之间使用分号分隔，如'PROXY a.com:80;SOCKS5 a.com:1080;'
-	
+    DOMAIN-SUFFIX,qiyi.com,DIRECT
+    DOMAIN-SUFFIX,iqiyi.com,DIRECT
+    IP-CIDR,112.17.1.75/32,REJECT,no-resolve
+    IP-CIDR,112.17.1.76/32,REJECT,no-resolve
+    IP-CIDR,112.17.1.193/32,REJECT,no-resolve
+    IP-CIDR,112.17.1.194/32,REJECT,no-resolve
+    IP-CIDR,112.17.1.195/32,REJECT,no-resolve
+    IP-CIDR,112.17.1.196/32,REJECT,no-resolve
+    [URL Rewrite]
+    ^http://iface.iqiyi.com/api/getNewAdInfo* _reject
+    ^http://pic?(\d{1}).qiyipic.com/common/?(\d{8})/?([a-z0-9]{32}).jpg _reject
