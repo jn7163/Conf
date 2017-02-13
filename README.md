@@ -13,10 +13,16 @@ FileName|UpdateTime|QrCode
 ##Update Content
 优酷
 
-	[Rule]
-	var wall_proxy = 'PROXY www.abc.com:443;'; 
-	以上需要更换成有效的代理地址，代理类型还可以为'SOCKS5'或'HTTPS'
-	多个代理之间使用分号分隔，如'PROXY a.com:80;SOCKS5 a.com:1080;'
+    [Rule]
+    DOMAIN,ad.mobile.youku.com,REJECT
+    DOMAIN,ad.api.3g.youku.com,REJECT
+    以上需要更换成有效的代理地址，代理类型还可以为'SOCKS5'或'HTTPS'
+    多个代理之间使用分号分隔，如'PROXY a.com:80;SOCKS5 a.com:1080;'
 	
 爱奇艺
-   6666
+
+    [Rule]
+    var wall_proxy = 'PROXY www.abc.com:443;'; 
+    以上需要更换成有效的代理地址，代理类型还可以为'SOCKS5'或'HTTPS'
+    多个代理之间使用分号分隔，如'PROXY a.com:80;SOCKS5 a.com:1080;'
+	
